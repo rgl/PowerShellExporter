@@ -1,0 +1,11 @@
+# * try to follow the metrics and label name best practices as described at:
+#   * https://prometheus.io/docs/practices/naming/
+#   * https://prometheus.io/docs/concepts/jobs_instances/
+#   * https://prometheus.io/docs/concepts/data_model/
+
+metrics:
+  # sample promql:
+  #   sum(pse_tcp_connections) by (state)
+  #   sum(pse_tcp_connections) by (remote_address)
+  - name: pse_tcp_connections
+    cmdlet: Get-TcpConnectionsMetrics
