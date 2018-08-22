@@ -10,15 +10,15 @@ dist/PowerShellExporter.zip: dist/PowerShellExporter.exe dist/metrics.yml dist/m
 		unzip -l PowerShellExporter.zip && \
 		sha256sum PowerShellExporter.zip
 
-dist/PowerShellExporter.exe: PowerShellExporter/bin/Release/PowerShellExporter.exe tmp/libz.exe
+dist/PowerShellExporter.exe: PowerShellExporter/bin/Release/net461/PowerShellExporter.exe tmp/libz.exe
 	mkdir -p dist
 	# NB to be able to load Serilog.Sinks.File from .config we need to use Scenario 4 as
 	#    described at https://github.com/MiloszKrajewski/LibZ/blob/master/doc/scenarios.md
-	cd PowerShellExporter/bin/Release && \
-		../../../tmp/libz add --libz PowerShellExporter.libz --include '*.dll' --move && \
-		../../../tmp/libz inject-libz --assembly PowerShellExporter.exe --libz PowerShellExporter.libz --move && \
-		../../../tmp/libz instrument --assembly PowerShellExporter.exe --libz-resources
-	cp PowerShellExporter/bin/Release/PowerShellExporter.exe* dist
+	cd PowerShellExporter/bin/Release/net461 && \
+		../../../../tmp/libz add --libz PowerShellExporter.libz --include '*.dll' --move && \
+		../../../../tmp/libz inject-libz --assembly PowerShellExporter.exe --libz PowerShellExporter.libz --move && \
+		../../../../tmp/libz instrument --assembly PowerShellExporter.exe --libz-resources
+	cp PowerShellExporter/bin/Release/net461/PowerShellExporter.exe* dist
 
 dist/metrics.yml: PowerShellExporter/metrics.yml
 	mkdir -p dist
@@ -33,7 +33,7 @@ tmp/libz.exe:
 	wget -Otmp/libz-1.2.0.0-tool.zip https://github.com/MiloszKrajewski/LibZ/releases/download/1.2.0.0/libz-1.2.0.0-tool.zip
 	unzip -d tmp tmp/libz-1.2.0.0-tool.zip
 
-PowerShellExporter/bin/Release/PowerShellExporter.exe: PowerShellExporter/*
+PowerShellExporter/bin/Release/net461/PowerShellExporter.exe: PowerShellExporter/*
 	MSBuild.exe -m -p:Configuration=Release -t:restore -t:build
 
 clean:

@@ -74,6 +74,9 @@ namespace PowerShellExporter
                 {
                     sc.ConstructUsing(settings =>
                         {
+                            Log.Information("{product} v{version}",
+                                Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>().Product,
+                                Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyFileVersionAttribute>().Version);
                             Log.Information("Configuration url: {url}", url);
                             Log.Information("Configuration metrics: {metrics}", metricsConfigPath);
 
