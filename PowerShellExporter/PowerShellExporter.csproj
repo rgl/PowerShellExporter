@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net461</TargetFramework>
     <Deterministic>true</Deterministic>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <AssemblyTitle>PowerShell Exporter</AssemblyTitle>
     <Description>Exports the results of PowerShell cmdlets as Prometheus Gauge Metrics</Description>
     <Company>ruilopes.com</Company>
@@ -27,7 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="prometheus-net">
-      <Version>2.1.0</Version>
+      <Version>2.1.3</Version>
     </PackageReference>
     <PackageReference Include="Serilog">
       <Version>2.7.1</Version>
@@ -42,13 +42,13 @@
       <Version>4.0.0</Version>
     </PackageReference>
     <PackageReference Include="Topshelf">
-      <Version>4.0.4</Version>
+      <Version>4.1.0</Version>
     </PackageReference>
     <PackageReference Include="Topshelf.Serilog">
-      <Version>4.0.4</Version>
+      <Version>4.1.0</Version>
     </PackageReference>
     <PackageReference Include="YamlDotNet">
-      <Version>5.0.1</Version>
+      <Version>5.1.0</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
