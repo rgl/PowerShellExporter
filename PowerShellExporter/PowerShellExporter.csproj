@@ -18,6 +18,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="grafana-dashboard.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="metrics.psm1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
