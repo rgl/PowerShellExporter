@@ -59,8 +59,9 @@ scrape_configs:
 This exporter can be installed as a Windows service with something alike:
 
 ```powershell
-.\PowerShellExporter install
-Start-Service PowerShellExporter
+.\PowerShellExporter help         # show help.
+.\PowerShellExporter install      # install with default settings.
+Start-Service PowerShellExporter  # start the service.
 ```
 
 **NB** you can modify the default listening url `http://localhost:9360/metrics` with the `-url` command line argument, e.g., `-url http://localhost:9360/pse/metrics`.
