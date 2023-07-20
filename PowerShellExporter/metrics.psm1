@@ -8,7 +8,7 @@ function Get-TcpConnectionsMetrics {
                 'remote_address' = $_.Group[0].RemoteAddress
                 'remote_port' = $_.Group[0].RemotePort
                 'state' = $_.Group[0].State
-				'local_port' = $_.Group[0].LocalPort
+		'local_port' = $_.Group[0].LocalPort
             })
         }
 }
