@@ -5,8 +5,8 @@ function Get-TcpConnectionsMetrics {
         | Group-Object -Property 'LocalAddress','LocalPort','RemoteAddress','RemotePort','State' `
         | ForEach-Object {
             [PowerShellExporter.Metric]::new($_.Count, @{
-		        'local_address' = $_.Group[0].LocalAddress
-		        'local_port' = $_.Group[0].LocalPort
+                'local_address' = $_.Group[0].LocalAddress
+                'local_port' = $_.Group[0].LocalPort
                 'remote_address' = $_.Group[0].RemoteAddress
                 'remote_port' = $_.Group[0].RemotePort
                 'state' = $_.Group[0].State
